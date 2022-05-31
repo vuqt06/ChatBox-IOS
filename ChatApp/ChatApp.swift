@@ -18,6 +18,7 @@ struct YourApp: App {
     WindowGroup {
       NavigationView {
         RootView()
+              .environmentObject(ContactsViewModel())
       }
     }
   }

@@ -7,6 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		520D7A8B2845C0B100C8B804 /* ContactsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 520D7A8A2845C0B100C8B804 /* ContactsViewModel.swift */; };
+		520D7A8D2845C55A00C8B804 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 520D7A8C2845C55A00C8B804 /* User.swift */; };
+		520D7A8F2845C64100C8B804 /* DatabaseService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 520D7A8E2845C64100C8B804 /* DatabaseService.swift */; };
+		520D7A912845C91C00C8B804 /* TextHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 520D7A902845C91C00C8B804 /* TextHelper.swift */; };
 		523C0CC62844B09D002A84B1 /* OnboardingContainerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 523C0CC52844B09D002A84B1 /* OnboardingContainerView.swift */; };
 		523C0CC82844B1AA002A84B1 /* WelcomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 523C0CC72844B1AA002A84B1 /* WelcomeView.swift */; };
 		523C0CCA2844B1B8002A84B1 /* PhoneNumberView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 523C0CC92844B1B8002A84B1 /* PhoneNumberView.swift */; };
@@ -35,6 +39,10 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		520D7A8A2845C0B100C8B804 /* ContactsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactsViewModel.swift; sourceTree = "<group>"; };
+		520D7A8C2845C55A00C8B804 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
+		520D7A8E2845C64100C8B804 /* DatabaseService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DatabaseService.swift; sourceTree = "<group>"; };
+		520D7A902845C91C00C8B804 /* TextHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextHelper.swift; sourceTree = "<group>"; };
 		523C0CC52844B09D002A84B1 /* OnboardingContainerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingContainerView.swift; sourceTree = "<group>"; };
 		523C0CC72844B1AA002A84B1 /* WelcomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WelcomeView.swift; sourceTree = "<group>"; };
 		523C0CC92844B1B8002A84B1 /* PhoneNumberView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhoneNumberView.swift; sourceTree = "<group>"; };
@@ -147,6 +155,7 @@
 			isa = PBXGroup;
 			children = (
 				52C5F8AE28431FD300F1FA4C /* AuthViewModel.swift */,
+				520D7A8A2845C0B100C8B804 /* ContactsViewModel.swift */,
 			);
 			path = ViewModels;
 			sourceTree = "<group>";
@@ -154,6 +163,7 @@
 		5253D3B62840BBC80005BDF3 /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				520D7A8C2845C55A00C8B804 /* User.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -161,6 +171,7 @@
 		5253D3B72840BBCF0005BDF3 /* Services */ = {
 			isa = PBXGroup;
 			children = (
+				520D7A8E2845C64100C8B804 /* DatabaseService.swift */,
 			);
 			path = Services;
 			sourceTree = "<group>";
@@ -171,6 +182,7 @@
 				5253D3C12840C63E0005BDF3 /* Fonts.swift */,
 				523C0CD32844B4E3002A84B1 /* OnboardingButtonsStyle.swift */,
 				523C0CD52844BE74002A84B1 /* CreateProfileTextFieldStyle.swift */,
+				520D7A902845C91C00C8B804 /* TextHelper.swift */,
 			);
 			path = Helpers;
 			sourceTree = "<group>";
@@ -277,19 +289,23 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				520D7A8F2845C64100C8B804 /* DatabaseService.swift in Sources */,
 				523C0CD02844B1DC002A84B1 /* SyncContactsView.swift in Sources */,
 				52C5F8AC284316BE00F1FA4C /* AppDelegate.swift in Sources */,
 				523C0CC62844B09D002A84B1 /* OnboardingContainerView.swift in Sources */,
+				520D7A912845C91C00C8B804 /* TextHelper.swift in Sources */,
 				52F37F9228420EAE00A98379 /* CustomTabBar.swift in Sources */,
 				523C0CD42844B4E3002A84B1 /* OnboardingButtonsStyle.swift in Sources */,
 				5253D3A92840BBA40005BDF3 /* RootView.swift in Sources */,
 				523C0CCE2844B1CF002A84B1 /* ProfileView.swift in Sources */,
+				520D7A8D2845C55A00C8B804 /* User.swift in Sources */,
 				523C0CC82844B1AA002A84B1 /* WelcomeView.swift in Sources */,
 				52C5F8AF28431FD300F1FA4C /* AuthViewModel.swift in Sources */,
 				523C0CCA2844B1B8002A84B1 /* PhoneNumberView.swift in Sources */,
 				5253D3C22840C63E0005BDF3 /* Fonts.swift in Sources */,
 				523C0CCC2844B1C5002A84B1 /* VerificationView.swift in Sources */,
 				523C0CD62844BE74002A84B1 /* CreateProfileTextFieldStyle.swift in Sources */,
+				520D7A8B2845C0B100C8B804 /* ContactsViewModel.swift in Sources */,
 				52F37F942842141000A98379 /* TabBarButton.swift in Sources */,
 				5253D3A72840BBA40005BDF3 /* ChatApp.swift in Sources */,
 			);
