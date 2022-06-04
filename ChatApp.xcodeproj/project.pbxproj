@@ -27,6 +27,7 @@
 		5253D3BE2840C4900005BDF3 /* LexendDeca-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 5253D3BB2840C4900005BDF3 /* LexendDeca-Bold.ttf */; };
 		5253D3BF2840C4900005BDF3 /* LexendDeca-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 5253D3BC2840C4900005BDF3 /* LexendDeca-Regular.ttf */; };
 		5253D3C22840C63E0005BDF3 /* Fonts.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5253D3C12840C63E0005BDF3 /* Fonts.swift */; };
+		528E12A7284C052C0095A77A /* ImagePicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 528E12A6284C052C0095A77A /* ImagePicker.swift */; };
 		52C5F8A12843152900F1FA4C /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 52C5F8A02843152900F1FA4C /* GoogleService-Info.plist */; };
 		52C5F8A42843161100F1FA4C /* FirebaseAuth in Frameworks */ = {isa = PBXBuildFile; productRef = 52C5F8A32843161100F1FA4C /* FirebaseAuth */; };
 		52C5F8A62843161100F1FA4C /* FirebaseFirestore in Frameworks */ = {isa = PBXBuildFile; productRef = 52C5F8A52843161100F1FA4C /* FirebaseFirestore */; };
@@ -61,6 +62,7 @@
 		5253D3BC2840C4900005BDF3 /* LexendDeca-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "LexendDeca-Regular.ttf"; sourceTree = "<group>"; };
 		5253D3C02840C4AF0005BDF3 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 		5253D3C12840C63E0005BDF3 /* Fonts.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Fonts.swift; sourceTree = "<group>"; };
+		528E12A6284C052C0095A77A /* ImagePicker.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImagePicker.swift; sourceTree = "<group>"; };
 		52C5F8A02843152900F1FA4C /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		52C5F8AB284316BE00F1FA4C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		52C5F8AD28431D5800F1FA4C /* ChatApp.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = ChatApp.entitlements; sourceTree = "<group>"; };
@@ -92,6 +94,7 @@
 				523C0CC92844B1B8002A84B1 /* PhoneNumberView.swift */,
 				523C0CCB2844B1C5002A84B1 /* VerificationView.swift */,
 				523C0CCD2844B1CF002A84B1 /* ProfileView.swift */,
+				528E12A6284C052C0095A77A /* ImagePicker.swift */,
 				523C0CCF2844B1DC002A84B1 /* SyncContactsView.swift */,
 			);
 			path = Onboarding;
@@ -306,6 +309,7 @@
 				523C0CCC2844B1C5002A84B1 /* VerificationView.swift in Sources */,
 				523C0CD62844BE74002A84B1 /* CreateProfileTextFieldStyle.swift in Sources */,
 				520D7A8B2845C0B100C8B804 /* ContactsViewModel.swift in Sources */,
+				528E12A7284C052C0095A77A /* ImagePicker.swift in Sources */,
 				52F37F942842141000A98379 /* TabBarButton.swift in Sources */,
 				5253D3A72840BBA40005BDF3 /* ChatApp.swift in Sources */,
 			);

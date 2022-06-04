@@ -10,7 +10,16 @@ import SwiftUI
 struct ProfileView: View {
     @State var firstName = ""
     @State var lastName = ""
+    
     @Binding var currentStep: OnboardingStep
+    
+    @State var selectedImage: UIImage?
+    @State var isPickerShowing = false
+    
+    @State var isSourceMenuShowing = false
+    
+    @State var isSaveButtonDisabled = false
+    @State var source: UIImagePickerController.SourceType = .photoLibrary
     var body: some View {
         VStack {
             Text("Setup your profile")
@@ -25,17 +34,27 @@ struct ProfileView: View {
             
             // Profile image button
             Button {
+                // Show action sheet
+                isSourceMenuShowing = true
                 
             } label: {
                 ZStack {
-                    Circle()
-                        .foregroundColor(Color.white)
-                    
+                    if selectedImage != nil {
+                        Image(uiImage: selectedImage!)
+                            .resizable()
+                            .scaledToFill()
+                            .clipShape(Circle())
+                    }
+                    else {
+                        Circle()
+                            .foregroundColor(Color.white)
+                        
+                        
+                        Image(systemName: "camera.fill")
+                            .tint(Color("icons-input"))
+                    }
                     Circle()
                         .stroke(Color("create-profile-border"), lineWidth: 2)
-                    
-                    Image(systemName: "camera.fill")
-                        .tint(Color("icons-input"))
                 }
                 .frame(width: 134, height: 134)
             }
@@ -46,22 +65,60 @@ struct ProfileView: View {
                 .textFieldStyle(CreateProfileTextFieldStyle())
             
             // Last Name
-            TextField("Last Name", text: $firstName)
+            TextField("Last Name", text: $lastName)
                 .textFieldStyle(CreateProfileTextFieldStyle())
             
             Spacer()
             
             Button {
                 // Next Step
-                currentStep = .contacts
+                isSaveButtonDisabled = true
+                // Save the data
+                DatabaseService().setUserProfile(firstName: firstName, lastName: lastName, image: selectedImage) { isSuccess in
+                    if isSuccess {
+                        currentStep = .contacts
+                    }
+                    else {
+                        // TODO: Show error message to the user
+                    }
+                    isSaveButtonDisabled = false
+                }
+                
             } label: {
-                Text("Next")
+                Text(isSaveButtonDisabled ? "Uploading..." : "Next")
             }
             .buttonStyle(OnboardingButtonStyle())
+            .disabled(isSaveButtonDisabled)
             .padding(.bottom, 87)
 
         }
         .padding(.horizontal)
+        .confirmationDialog("From where?", isPresented: $isSourceMenuShowing, actions: {
+            Button {
+                // Set the source to photo library
+                self.source = .photoLibrary
+                // Show the image picker
+                isPickerShowing = true
+            } label: {
+                Text("Photo Library")
+            }
+            
+            if UIImagePickerController.isSourceTypeAvailable(.camera) {
+                Button {
+                    // Set the source to camera
+                    self.source = .camera
+                    // Show the image picker
+                    isPickerShowing = true
+                } label: {
+                    Text("Take Photo")
+                }
+            }
+
+        })
+        .sheet(isPresented: $isPickerShowing) {
+            // Show the image picker
+            ImagePicker(selectedImage: $selectedImage, isPickerShowing: $isPickerShowing, source: self.source)
+        }
     }
 }
 
