@@ -27,6 +27,7 @@ struct CustomTabBar: View {
             
             Button {
                 // Switch to new chat
+                AuthViewModel.loggedOut()
             } label: {
                 VStack(alignment: .center, spacing: 4) {
                     Image(systemName: "plus.circle.fill")

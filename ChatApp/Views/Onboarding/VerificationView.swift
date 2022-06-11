@@ -11,6 +11,7 @@ import Combine
 struct VerificationView: View {
     @State var verfificationCode = ""
     @Binding var currentStep: OnboardingStep
+    @Binding var isOnboarding: Bool
     var body: some View {
         VStack {
             Text("Verification")
@@ -53,12 +54,23 @@ struct VerificationView: View {
             Spacer()
             
             Button {
-                // Send the verification code o Firebase
+                // Send the verification code to Firebase
                 AuthViewModel.verifyCode(code: verfificationCode) { error in
                     // Check for errors
                     if error == nil {
-                        // Move to the next Step
-                        currentStep = .profile
+                        
+                        // Check if this user has a profile
+                        DatabaseService().checkUserProfile {
+                            exists in
+                            if exists {
+                                // End the onboarding
+                                isOnboarding = false
+                            }
+                            else {
+                                // Move to the profile creation Step
+                                currentStep = .profile
+                            }
+                        }
                     }
                     else {
                         // TODO: Show an error
@@ -77,6 +89,6 @@ struct VerificationView: View {
 
 struct VerificationView_Previews: PreviewProvider {
     static var previews: some View {
-        VerificationView(currentStep: .constant(.verification))
+        VerificationView(currentStep: .constant(.verification), isOnboarding: .constant(true))
     }
 }
