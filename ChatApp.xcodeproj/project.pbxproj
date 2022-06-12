@@ -37,6 +37,8 @@
 		52C5F8AF28431FD300F1FA4C /* AuthViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52C5F8AE28431FD300F1FA4C /* AuthViewModel.swift */; };
 		52F37F9228420EAE00A98379 /* CustomTabBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52F37F9128420EAE00A98379 /* CustomTabBar.swift */; };
 		52F37F942842141000A98379 /* TabBarButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52F37F932842141000A98379 /* TabBarButton.swift */; };
+		52FA64B628566707005CC0DA /* ContactsListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52FA64B528566707005CC0DA /* ContactsListView.swift */; };
+		52FA64B828566719005CC0DA /* ChatsListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52FA64B728566719005CC0DA /* ChatsListView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -69,6 +71,8 @@
 		52C5F8AE28431FD300F1FA4C /* AuthViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthViewModel.swift; sourceTree = "<group>"; };
 		52F37F9128420EAE00A98379 /* CustomTabBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTabBar.swift; sourceTree = "<group>"; };
 		52F37F932842141000A98379 /* TabBarButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarButton.swift; sourceTree = "<group>"; };
+		52FA64B528566707005CC0DA /* ContactsListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactsListView.swift; sourceTree = "<group>"; };
+		52FA64B728566719005CC0DA /* ChatsListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatsListView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -147,6 +151,8 @@
 		5253D3B42840BBB30005BDF3 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				52FA64B4285666F5005CC0DA /* Chats View */,
+				52FA64B3285666E9005CC0DA /* Contacts View */,
 				523C0CC42844B070002A84B1 /* Onboarding */,
 				52F37F9028420E9400A98379 /* Custom Tab Bar */,
 				5253D3A82840BBA40005BDF3 /* RootView.swift */,
@@ -207,6 +213,22 @@
 				52F37F932842141000A98379 /* TabBarButton.swift */,
 			);
 			path = "Custom Tab Bar";
+			sourceTree = "<group>";
+		};
+		52FA64B3285666E9005CC0DA /* Contacts View */ = {
+			isa = PBXGroup;
+			children = (
+				52FA64B528566707005CC0DA /* ContactsListView.swift */,
+			);
+			path = "Contacts View";
+			sourceTree = "<group>";
+		};
+		52FA64B4285666F5005CC0DA /* Chats View */ = {
+			isa = PBXGroup;
+			children = (
+				52FA64B728566719005CC0DA /* ChatsListView.swift */,
+			);
+			path = "Chats View";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -300,6 +322,7 @@
 				52F37F9228420EAE00A98379 /* CustomTabBar.swift in Sources */,
 				523C0CD42844B4E3002A84B1 /* OnboardingButtonsStyle.swift in Sources */,
 				5253D3A92840BBA40005BDF3 /* RootView.swift in Sources */,
+				52FA64B828566719005CC0DA /* ChatsListView.swift in Sources */,
 				523C0CCE2844B1CF002A84B1 /* ProfileView.swift in Sources */,
 				520D7A8D2845C55A00C8B804 /* User.swift in Sources */,
 				523C0CC82844B1AA002A84B1 /* WelcomeView.swift in Sources */,
@@ -308,6 +331,7 @@
 				5253D3C22840C63E0005BDF3 /* Fonts.swift in Sources */,
 				523C0CCC2844B1C5002A84B1 /* VerificationView.swift in Sources */,
 				523C0CD62844BE74002A84B1 /* CreateProfileTextFieldStyle.swift in Sources */,
+				52FA64B628566707005CC0DA /* ContactsListView.swift in Sources */,
 				520D7A8B2845C0B100C8B804 /* ContactsViewModel.swift in Sources */,
 				528E12A7284C052C0095A77A /* ImagePicker.swift in Sources */,
 				52F37F942842141000A98379 /* TabBarButton.swift in Sources */,

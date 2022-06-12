@@ -11,18 +11,29 @@ struct RootView: View {
     @State var selectedTab: Tabs = .contacts
     @State var isOnboarding = !AuthViewModel.isUserLoggedIn()
     var body: some View {
-        VStack {
-            Text("Hello, world!")
-                .padding()
+        ZStack {
+            Color("background")
+                .ignoresSafeArea()
             
-            Spacer()
-            
-            CustomTabBar(selectedTabs: $selectedTab)
+            VStack {
+                switch selectedTab {
+                case .chats:
+                    ChatsListView()
+                case .contacts:
+                    ContactsListView()
+                }
+                
+                Spacer()
+                
+                CustomTabBar(selectedTabs: $selectedTab)
+            }
+                    
         }
         .fullScreenCover(isPresented: $isOnboarding) {
             OnboardingContainerView(isOnboarding: $isOnboarding)
         }
-    }
+        .frame(alignment: .topLeading)
+}
     
 //    init() {
 //        for family in UIFont.familyNames {
