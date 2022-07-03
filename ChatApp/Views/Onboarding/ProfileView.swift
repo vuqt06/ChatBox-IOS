@@ -71,7 +71,10 @@ struct ProfileView: View {
             Spacer()
             
             Button {
+                // TODO: Check that firstname/lastname fields are filled before allowing to save
+                
                 // Next Step
+                // Prevent double clicking
                 isSaveButtonDisabled = true
                 // Save the data
                 DatabaseService().setUserProfile(firstName: firstName, lastName: lastName, image: selectedImage) { isSuccess in

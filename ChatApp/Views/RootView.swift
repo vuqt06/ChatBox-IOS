@@ -10,6 +10,8 @@ import SwiftUI
 struct RootView: View {
     @State var selectedTab: Tabs = .contacts
     @State var isOnboarding = !AuthViewModel.isUserLoggedIn()
+    @State var isChatShowing = false
+    
     var body: some View {
         ZStack {
             Color("background")
@@ -18,9 +20,9 @@ struct RootView: View {
             VStack {
                 switch selectedTab {
                 case .chats:
-                    ChatsListView()
+                    ChatsListView(isChatShowing: $isChatShowing)
                 case .contacts:
-                    ContactsListView()
+                    ContactsListView(isChatShowing: $isChatShowing)
                 }
                 
                 Spacer()
@@ -32,7 +34,10 @@ struct RootView: View {
         .fullScreenCover(isPresented: $isOnboarding) {
             OnboardingContainerView(isOnboarding: $isOnboarding)
         }
-        .frame(alignment: .topLeading)
+        .fullScreenCover(isPresented: $isChatShowing) {
+            // The conversation view
+            ConversationView(isChatShowing: $isChatShowing)
+        }
 }
     
 //    init() {
