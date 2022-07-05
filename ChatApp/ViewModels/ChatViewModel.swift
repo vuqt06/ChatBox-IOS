@@ -89,6 +89,14 @@ class ChatViewModel: ObservableObject {
         databaseService.sendMessage(msg: msg, chat: selectedChat!)
     }
     
+    func conversationViewCleanup() {
+        databaseService.detachConversationViewListeners()
+    }
+    
+    func chatListViewCleanup() {
+        databaseService.detachChatListViewListeners()
+    }
+    
     // MARK: Heler methods
     
     /// Tasks in a list of user ids, removes the user from tha list and returns the remain ids

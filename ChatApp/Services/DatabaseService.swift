@@ -14,6 +14,9 @@ import FirebaseStorage
 
 class DatabaseService {
     
+    var chatListViewListener = [ListenerRegistration]()
+    var converstaionViewListener = [ListenerRegistration]()
+    
     func getPlatformUsers(localContacts: [CNContact], completion: @escaping ([User]) -> Void) {
         // The array where we're storing fetched platform users
         var platformUsers = [User]()
@@ -175,7 +178,7 @@ class DatabaseService {
         // Perform a query against the chat collection for any chats where the user is a participant
         let chatsQuery = db.collection("chats").whereField("participantids", arrayContains: AuthViewModel.getLoggedInUserId())
         
-        chatsQuery.getDocuments { snapshot, error in
+        let listener = chatsQuery.addSnapshotListener { snapshot, error in
             if snapshot != nil && error == nil {
                 
                 var chats = [Chat]()
@@ -198,6 +201,9 @@ class DatabaseService {
         else {
             print("Error in database retrieval")
         }
+        
+        // Keep track of the listener so that we can close it later
+        chatListViewListener.append(listener)
     }
     
     /// This method returns all messages for a given chat
@@ -219,7 +225,7 @@ class DatabaseService {
                 .order(by: "timestamp")
             
             // Perform the query
-            msgsQuery.getDocuments { snapshot, error in
+            let listener = msgsQuery.addSnapshotListener { snapshot, error in
                 
                 if snapshot != nil && error == nil {
                     var messages = [ChatMessage]()
@@ -239,6 +245,8 @@ class DatabaseService {
                     print("Error in database retrieval")
                 }
             }
+            // Keep track of listener so that we can close it later
+            converstaionViewListener.append(listener)
         }
     }
     
@@ -280,5 +288,17 @@ class DatabaseService {
             // Communicate the document id
             completion(doc.documentID)
         })
+    }
+    
+    func detachChatListViewListeners() {
+        for listener in chatListViewListener {
+            listener.remove()
+        }
+    }
+    
+    func detachConversationViewListeners() {
+        for listener in converstaionViewListener {
+            listener.remove()
+        }
     }
 }
