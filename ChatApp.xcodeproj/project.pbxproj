@@ -29,6 +29,7 @@
 		5253D3BE2840C4900005BDF3 /* LexendDeca-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 5253D3BB2840C4900005BDF3 /* LexendDeca-Bold.ttf */; };
 		5253D3BF2840C4900005BDF3 /* LexendDeca-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 5253D3BC2840C4900005BDF3 /* LexendDeca-Regular.ttf */; };
 		5253D3C22840C63E0005BDF3 /* Fonts.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5253D3C12840C63E0005BDF3 /* Fonts.swift */; };
+		5262064F28762737009C1170 /* CacheService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5262064E28762737009C1170 /* CacheService.swift */; };
 		5263F89A28721F02009B459D /* ChatListRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5263F89928721F02009B459D /* ChatListRow.swift */; };
 		528E12A7284C052C0095A77A /* ImagePicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 528E12A6284C052C0095A77A /* ImagePicker.swift */; };
 		52ABBB53285FB5D500A1D4E8 /* Chat.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52ABBB52285FB5D500A1D4E8 /* Chat.swift */; };
@@ -74,6 +75,7 @@
 		5253D3BC2840C4900005BDF3 /* LexendDeca-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "LexendDeca-Regular.ttf"; sourceTree = "<group>"; };
 		5253D3C02840C4AF0005BDF3 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 		5253D3C12840C63E0005BDF3 /* Fonts.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Fonts.swift; sourceTree = "<group>"; };
+		5262064E28762737009C1170 /* CacheService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CacheService.swift; sourceTree = "<group>"; };
 		5263F89928721F02009B459D /* ChatListRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatListRow.swift; sourceTree = "<group>"; };
 		528E12A6284C052C0095A77A /* ImagePicker.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImagePicker.swift; sourceTree = "<group>"; };
 		52ABBB52285FB5D500A1D4E8 /* Chat.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Chat.swift; sourceTree = "<group>"; };
@@ -200,6 +202,7 @@
 			isa = PBXGroup;
 			children = (
 				520D7A8E2845C64100C8B804 /* DatabaseService.swift */,
+				5262064E28762737009C1170 /* CacheService.swift */,
 			);
 			path = Services;
 			sourceTree = "<group>";
@@ -358,6 +361,7 @@
 				52FA64B828566719005CC0DA /* ChatsListView.swift in Sources */,
 				523C0CCE2844B1CF002A84B1 /* ProfileView.swift in Sources */,
 				520D7A8D2845C55A00C8B804 /* User.swift in Sources */,
+				5262064F28762737009C1170 /* CacheService.swift in Sources */,
 				5263F89A28721F02009B459D /* ChatListRow.swift in Sources */,
 				523C0CC82844B1AA002A84B1 /* WelcomeView.swift in Sources */,
 				52C5F8AF28431FD300F1FA4C /* AuthViewModel.swift in Sources */,

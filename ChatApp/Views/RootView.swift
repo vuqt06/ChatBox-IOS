@@ -12,6 +12,7 @@ struct RootView: View {
     @Environment(\.scenePhase) var scenePhse
     
     @EnvironmentObject var chatViewModel: ChatViewModel
+    @EnvironmentObject var contactsViewModel: ContactsViewModel
     @State var selectedTab: Tabs = .contacts
     @State var isOnboarding = !AuthViewModel.isUserLoggedIn()
     @State var isChatShowing = false
@@ -34,6 +35,12 @@ struct RootView: View {
                 CustomTabBar(selectedTabs: $selectedTab)
             }
                     
+        }
+        .onAppear {
+            if !isOnboarding {
+                // User has already onboarded, load contacts
+                contactsViewModel.getLocalContacts()
+            }
         }
         .fullScreenCover(isPresented: $isOnboarding) {
             OnboardingContainerView(isOnboarding: $isOnboarding)
